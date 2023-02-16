@@ -15,7 +15,8 @@
         "laminas/laminas-development-mode": "^3.2",
         "laminas/laminas-mvc": "^3.3.4",
         "laminas/laminas-db": "^2.12.0",
-        "laminas/laminas-mvc-form": "^2.0.0"
+        "laminas/laminas-mvc-form": "^2.0.0",
+        "laminas/laminas-navigation": "^2.18"
     },
     "autoload": {
         "psr-4": {
