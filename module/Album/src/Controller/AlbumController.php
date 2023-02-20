@@ -7,6 +7,8 @@ use Album\Model\Album;
 use Album\Model\AlbumTable;
 use Laminas\Mvc\Controller\AbstractActionController;
 use Laminas\View\Model\ViewModel;
+use LmcUser\Controller\UserController;
+use LmcUser\Entity\UserInterface;
 
 class AlbumController extends AbstractActionController
 {
@@ -21,13 +23,25 @@ class AlbumController extends AbstractActionController
 
     public function indexAction()
     {
+        // Check if we have a user identity
+        if (!$this->lmcUserAuthentication()->hasIdentity()) {
+            // If not, then redirect to the 'login' route
+            return $this->redirect()->toRoute('lmcuser/login');
+        }
+        /** @var UserInterface $user */
+        $user = $this->lmcUserAuthentication()->getIdentity();
+
         return new ViewModel([
-            'albums' => $this->table->fetchAll(),
+            'albums' => $this->table->fetchAll(['user_email' => $user->getEmail()]),
         ]);
     }
 
     public function addAction()
     {
+        if (!$this->lmcUserAuthentication()->hasIdentity()) {
+            return $this->redirect()->toRoute(UserController::ROUTE_LOGIN);
+        }
+
         $form = new AlbumForm();
         $form->get('submit')->setValue('Add');
 
@@ -45,13 +59,24 @@ class AlbumController extends AbstractActionController
             return ['form' => $form];
         }
 
-        $album->exchangeArray($form->getData());
+        /** @var UserInterface $user */
+        // Get the user identity
+        $user = $this->lmcUserAuthentication()->getIdentity();
+        $data = $form->getData();
+        // Add the user's email to the album data
+        $data['user_email'] = $user->getEmail();
+
+        $album->exchangeArray($data);
         $this->table->saveAlbum($album);
         return $this->redirect()->toRoute('album');
     }
 
     public function editAction()
     {
+        if (!$this->lmcUserAuthentication()->hasIdentity()) {
+            return $this->redirect()->toRoute(UserController::ROUTE_LOGIN);
+        }
+
         $id = (int) $this->params()->fromRoute('id', 0);
 
         if (0 === $id) {
@@ -64,6 +89,15 @@ class AlbumController extends AbstractActionController
         try {
             $album = $this->table->getAlbum($id);
         } catch (\Exception $e) {
+            return $this->redirect()->toRoute('album', ['action' => 'index']);
+        }
+
+        /** @var UserInterface $user */
+        $user = $this->lmcUserAuthentication()->getIdentity();
+
+        // Check that the album belongs to the user and if not redirect to the album page
+        // This can happen if the user navigated to the edit page for an album he does not own
+        if ($album->user_email != $user->getEmail()) {
             return $this->redirect()->toRoute('album', ['action' => 'index']);
         }
 
@@ -96,9 +130,28 @@ class AlbumController extends AbstractActionController
 
     public function deleteAction()
     {
+        if (!$this->lmcUserAuthentication()->hasIdentity()) {
+            return $this->redirect()->toRoute(UserController::ROUTE_LOGIN);
+        }
+
         $id = (int) $this->params()->fromRoute('id', 0);
         if (!$id) {
             return $this->redirect()->toRoute('album');
+        }
+
+        // Get the album first
+        try {
+            $album = $this->table->getAlbum($id);
+        } catch (\Exception $e) {
+            return $this->redirect()->toRoute('album', ['action' => 'index']);
+        }
+
+        /** @var UserInterface $user */
+        $user = $this->lmcUserAuthentication()->getIdentity();
+
+        // Does the album belong to the user?
+        if ($album->user_email != $user->getEmail()) {
+            return $this->redirect()->toRoute('album', ['action' => 'index']);
         }
 
         $request = $this->getRequest();

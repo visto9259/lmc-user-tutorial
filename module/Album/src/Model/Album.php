@@ -15,7 +15,7 @@ class Album extends \ArrayObject implements InputFilterAwareInterface
     public $id;
     public $artist;
     public $title;
-
+    public $user_email;
     private $inputFilter;
 
     public function exchangeArray(object|array $data)
@@ -23,6 +23,7 @@ class Album extends \ArrayObject implements InputFilterAwareInterface
         $this->id     = !empty($data['id']) ? $data['id'] : null;
         $this->artist = !empty($data['artist']) ? $data['artist'] : null;
         $this->title  = !empty($data['title']) ? $data['title'] : null;
+        $this->user_email = !empty($data['user_email']) ? $data['user_email'] : null;
     }
 
     public function getArrayCopy(): array
@@ -31,6 +32,7 @@ class Album extends \ArrayObject implements InputFilterAwareInterface
             'id'     => $this->id,
             'artist' => $this->artist,
             'title'  => $this->title,
+            'user_email' => $this->user_email,
         ];
     }
 

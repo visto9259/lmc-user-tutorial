@@ -53,6 +53,26 @@
                             ->setMaxDepth(0)
                             ->setUlClass('nav navbar-nav');
                     ?>
+                    <?php $user = $this->lmcUserIdentity(); ?>
+                    <?php if (!$user): ?>
+                        <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item dropdown">
+                                <a data-toggle="dropdown" href="#">Log in</a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <?= $this->lmcUserLoginWidget();?>
+                                </div>
+                            </li>
+                        </ul>
+                    <?php else: ?>
+                        <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item dropdown">
+                                <a data-toggle="dropdown" href="#">Hi <?= $this->lmcUserDisplayName();?>!</a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a class="dropdown-item" href="<?= $this->url('lmcuser/logout');?>">Log out</a>
+                                </div>
+                            </li>
+                        </ul>
+                    <?php endif;?>
                 </div>
             </div>
         </nav>

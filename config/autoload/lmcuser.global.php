@@ -171,7 +171,7 @@ $settings = [
      * Accepted values: A valid route name within your application
      *
      */
-    //'login_redirect_route' => 'lmcuser',
+    'login_redirect_route' => 'album',
 
     /**
      * Logout Redirect Route
@@ -181,7 +181,7 @@ $settings = [
      * Default value: 'lmcuser/login'
      * Accepted values: A valid route name within your application
      */
-    //'logout_redirect_route' => 'lmcuser/login',
+    'logout_redirect_route' => 'home',
 
     /**
      * Password Security

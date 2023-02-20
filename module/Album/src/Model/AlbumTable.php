@@ -14,9 +14,9 @@ class AlbumTable
         $this->tableGateway = $tableGateway;
     }
 
-    public function fetchAll()
+    public function fetchAll($where=[])
     {
-        return $this->tableGateway->select();
+        return $this->tableGateway->select($where);
     }
 
     public function getAlbum($id)
@@ -39,6 +39,7 @@ class AlbumTable
         $data = [
             'artist' => $album->artist,
             'title'  => $album->title,
+            'user_email' => $album->user_email,
         ];
 
         $id = (int) $album->id;
