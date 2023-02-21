@@ -7,7 +7,7 @@ found in the Laminas documentation.  The tutorial is [here](https://docs.laminas
 
 This application is the result of following the tutorial up and including the [Adding laminas-navigation to the Album Module](https://docs.laminas.dev/tutorials/navigation/).
 
-The purpose of this application is to serve as a starting point for the LmcUser tutorial if the student does not want to perform all the
+The purpose of this application is to serve as a starting point for the [LmcUser tutorial](https://www.vistomedia.com/laminas-user-authentication-using-lmcuser/) if the student does not want to perform all the
 steps of the Album Module tutorial to get the application to the level needed by the LmcUser tutorial.
 
 Development mode is already enabled.
