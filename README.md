@@ -42,9 +42,9 @@ from the [Laminas MVC Skeleton README](https://github.com/laminas/laminas-mvc-sk
 The `starting-point` branch contains the Laminas MVC Skeleton with the Album module added but **BEFORE** the changes on this tutorial
 are applied.  This is the starting point of the tutorial.
 
-### lmcuser-tutorial-complete
+### lmcuser-tutorial-part1
 
-The `lmcuser-tutorial-complete` branch the Laminas MVC Skeleton with the Album module added and **AFTER** the changes
+The `lmcuser-tutorial-part1` branch contains the Laminas MVC Skeleton with the Album module added and **AFTER** the changes
 on this [tutorial](https://www.vistomedia.com/laminas-user-authentication-using-lmcuser/) are applied.
 
 You can use this to compare against your own modifications.
