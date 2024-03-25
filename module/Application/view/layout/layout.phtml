@@ -24,7 +24,10 @@
             ->prependStylesheet($this->basePath('css/bootstrap.min.css'))
         ?>
         <!-- Scripts -->
-        <?= $this->headScript() ?>
+        <?php // we need to include Popper.js for dropdown menu items ?>
+        <?= $this->headScript()
+        //    ->prependFile('https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js')
+        ?>
     </head>
     <body>
         <nav class="navbar navbar-expand-md navbar-dark mb-4" role="navigation">
@@ -49,7 +52,49 @@
                         ->menu()
                         ->setMinDepth(0)
                         ->setMaxDepth(0)
-                        ->setUlClass('nav navbar-nav')?>
+                        ->setUlClass('nav navbar-nav me-auto')
+                    ?>
+                    <?php $user = $this->lmcUserIdentity(); ?>
+                    <?php if (!$user): ?>
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Login in</a>
+                                <div class="dropdown-menu p-1">
+                                    <?php /** @var \LmcUser\Form\Login $loginForm */ ?>
+                                    <?php $loginForm = $this->lmcUserLoginWidget(['render' => false])->getVariable('loginForm');?>
+                                    <?php $loginForm->setAttribute('action',$this->url('lmcuser/login'))?>
+                                    <?= $this->form()->openTag($loginForm);?>
+                                    <div class="form-group mb-1">
+                                        <?php $loginForm->get('identity')->setAttributes([
+                                            'class' =>'form-control',
+                                            'placeholder' => 'Email',
+                                        ]);?>
+                                        <?= $this->formElement($loginForm->get('identity'));?>
+                                    </div>
+                                    <div class="form-group mb-1">
+                                        <?php $loginForm->get('credential')->setAttributes([
+                                            'class'=> 'form-control',
+                                            'placeholder' => 'Password',
+                                        ]);?>
+                                        <?= $this->formElement($loginForm->get('credential'));?>
+                                    </div>
+                                    <?= $this->formElement($loginForm->get('security'));?>
+                                    <?php $loginForm->get('submit')->setAttribute('class', 'btn btn-primary');?>
+                                    <?= $this->formElement($loginForm->get('submit'));?>
+                                    <?= $this->form()->closeTag();?>                                </div>
+                            </li>
+                        </ul>
+                    <?php else: ?>
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a class="nav-link dropdown-toggle" role="button" href="#" data-bs-toggle="dropdown">Hi <?= $this->lmcUserDisplayName();?>!</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="<?= $this->url('lmcuser');?>">Profile</a></li>
+                                    <li><a class="dropdown-item" href="<?= $this->url('lmcuser/logout');?>">Log out</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    <?php endif; ?>
                 </div>
             </div>
         </nav>

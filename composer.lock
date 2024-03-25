@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d38dec328194fdcb8a23486177836379",
+    "content-hash": "b24d45ee824b3fa28b96a1f4fb57ab20",
     "packages": [
         {
             "name": "brick/varexporter",
@@ -209,6 +209,82 @@
             "time": "2024-02-05T11:56:58+00:00"
         },
         {
+            "name": "laminas/laminas-authentication",
+            "version": "2.16.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laminas/laminas-authentication.git",
+                "reference": "755b30a37de0f8649bad86dfdc46a0d57cb0d70f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laminas/laminas-authentication/zipball/755b30a37de0f8649bad86dfdc46a0d57cb0d70f",
+                "reference": "755b30a37de0f8649bad86dfdc46a0d57cb0d70f",
+                "shasum": ""
+            },
+            "require": {
+                "laminas/laminas-stdlib": "^3.6.0",
+                "php": "~8.1.0 || ~8.2.0 || ~8.3.0"
+            },
+            "conflict": {
+                "zendframework/zend-authentication": "*"
+            },
+            "require-dev": {
+                "laminas/laminas-coding-standard": "~2.4.0",
+                "laminas/laminas-crypt": "^2.6.0 || ^3.10.0",
+                "laminas/laminas-db": "^2.18.0",
+                "laminas/laminas-http": "^2.18.0",
+                "laminas/laminas-ldap": "^2.17",
+                "laminas/laminas-session": "^2.16.0",
+                "laminas/laminas-uri": "^2.10.0",
+                "laminas/laminas-validator": "^2.30.1",
+                "phpunit/phpunit": "^9.6.13",
+                "psalm/plugin-phpunit": "^0.17.0",
+                "squizlabs/php_codesniffer": "^3.7.2",
+                "vimeo/psalm": "^4.30.0"
+            },
+            "suggest": {
+                "laminas/laminas-crypt": "Laminas\\Crypt component",
+                "laminas/laminas-db": "Laminas\\Db component",
+                "laminas/laminas-http": "Laminas\\Http component",
+                "laminas/laminas-ldap": "Laminas\\Ldap component",
+                "laminas/laminas-session": "Laminas\\Session component",
+                "laminas/laminas-uri": "Laminas\\Uri component",
+                "laminas/laminas-validator": "Laminas\\Validator component"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Laminas\\Authentication\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "provides an API for authentication and includes concrete authentication adapters for common use case scenarios",
+            "homepage": "https://laminas.dev",
+            "keywords": [
+                "Authentication",
+                "laminas"
+            ],
+            "support": {
+                "chat": "https://laminas.dev/chat",
+                "docs": "https://docs.laminas.dev/laminas-authentication/",
+                "forum": "https://discourse.laminas.dev",
+                "issues": "https://github.com/laminas/laminas-authentication/issues",
+                "rss": "https://github.com/laminas/laminas-authentication/releases.atom",
+                "source": "https://github.com/laminas/laminas-authentication"
+            },
+            "funding": [
+                {
+                    "url": "https://funding.communitybridge.org/projects/laminas-project",
+                    "type": "community_bridge"
+                }
+            ],
+            "time": "2023-11-06T09:32:35+00:00"
+        },
+        {
             "name": "laminas/laminas-component-installer",
             "version": "3.4.0",
             "source": {
@@ -342,6 +418,70 @@
                 }
             ],
             "time": "2023-09-19T12:02:54+00:00"
+        },
+        {
+            "name": "laminas/laminas-crypt",
+            "version": "3.11.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laminas/laminas-crypt.git",
+                "reference": "098fc61a895d1ff5d1c2b861525b4428bf6c3240"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laminas/laminas-crypt/zipball/098fc61a895d1ff5d1c2b861525b4428bf6c3240",
+                "reference": "098fc61a895d1ff5d1c2b861525b4428bf6c3240",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "laminas/laminas-math": "^3.4",
+                "laminas/laminas-servicemanager": "^3.11.2",
+                "laminas/laminas-stdlib": "^3.8",
+                "php": "~8.0.0 || ~8.1.0 || ~8.2.0 || ~8.3.0",
+                "psr/container": "^1.1"
+            },
+            "conflict": {
+                "zendframework/zend-crypt": "*"
+            },
+            "require-dev": {
+                "laminas/laminas-coding-standard": "~2.4.0",
+                "phpunit/phpunit": "^9.5.25"
+            },
+            "suggest": {
+                "ext-openssl": "Required for most features of Laminas\\Crypt"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Laminas\\Crypt\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "Strong cryptography tools and password hashing",
+            "homepage": "https://laminas.dev",
+            "keywords": [
+                "crypt",
+                "laminas"
+            ],
+            "support": {
+                "chat": "https://laminas.dev/chat",
+                "docs": "https://docs.laminas.dev/laminas-crypt/",
+                "forum": "https://discourse.laminas.dev",
+                "issues": "https://github.com/laminas/laminas-crypt/issues",
+                "rss": "https://github.com/laminas/laminas-crypt/releases.atom",
+                "source": "https://github.com/laminas/laminas-crypt"
+            },
+            "funding": [
+                {
+                    "url": "https://funding.communitybridge.org/projects/laminas-project",
+                    "type": "community_bridge"
+                }
+            ],
+            "time": "2023-11-06T23:02:42+00:00"
         },
         {
             "name": "laminas/laminas-db",
@@ -1200,6 +1340,73 @@
             "time": "2023-10-18T09:58:51+00:00"
         },
         {
+            "name": "laminas/laminas-math",
+            "version": "3.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laminas/laminas-math.git",
+                "reference": "3e90445828fd64308de2a600b48c3df051b3b17a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laminas/laminas-math/zipball/3e90445828fd64308de2a600b48c3df051b3b17a",
+                "reference": "3e90445828fd64308de2a600b48c3df051b3b17a",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "php": "~8.0.0 || ~8.1.0 || ~8.2.0 || ~8.3.0"
+            },
+            "conflict": {
+                "zendframework/zend-math": "*"
+            },
+            "require-dev": {
+                "laminas/laminas-coding-standard": "~2.4.0",
+                "phpunit/phpunit": "~9.5.25"
+            },
+            "suggest": {
+                "ext-bcmath": "If using the bcmath functionality",
+                "ext-gmp": "If using the gmp functionality"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.2.x-dev",
+                    "dev-develop": "3.3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Laminas\\Math\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "Create cryptographically secure pseudo-random numbers, and manage big integers",
+            "homepage": "https://laminas.dev",
+            "keywords": [
+                "laminas",
+                "math"
+            ],
+            "support": {
+                "chat": "https://laminas.dev/chat",
+                "docs": "https://docs.laminas.dev/laminas-math/",
+                "forum": "https://discourse.laminas.dev",
+                "issues": "https://github.com/laminas/laminas-math/issues",
+                "rss": "https://github.com/laminas/laminas-math/releases.atom",
+                "source": "https://github.com/laminas/laminas-math"
+            },
+            "funding": [
+                {
+                    "url": "https://funding.communitybridge.org/projects/laminas-project",
+                    "type": "community_bridge"
+                }
+            ],
+            "time": "2023-10-18T09:53:37+00:00"
+        },
+        {
             "name": "laminas/laminas-modulemanager",
             "version": "2.15.0",
             "source": {
@@ -1397,6 +1604,141 @@
                 }
             ],
             "time": "2023-05-24T12:25:40+00:00"
+        },
+        {
+            "name": "laminas/laminas-mvc-plugin-flashmessenger",
+            "version": "1.10.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laminas/laminas-mvc-plugin-flashmessenger.git",
+                "reference": "852d8c661dfb6492d4ea6d4ab238e72180e82387"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laminas/laminas-mvc-plugin-flashmessenger/zipball/852d8c661dfb6492d4ea6d4ab238e72180e82387",
+                "reference": "852d8c661dfb6492d4ea6d4ab238e72180e82387",
+                "shasum": ""
+            },
+            "require": {
+                "laminas/laminas-mvc": "^3.3",
+                "laminas/laminas-session": "^2.12.0",
+                "laminas/laminas-stdlib": "^3.6.4",
+                "laminas/laminas-view": "^2.13.1",
+                "php": "~8.1.0 || ~8.2.0 || ~8.3.0"
+            },
+            "conflict": {
+                "laminas/laminas-mvc": "<3.0.0",
+                "zendframework/zend-mvc-plugin-flashmessenger": "*"
+            },
+            "require-dev": {
+                "laminas/laminas-coding-standard": "~2.5.0",
+                "laminas/laminas-i18n": "^2.19.0",
+                "phpunit/phpunit": "^9.5.26",
+                "psalm/plugin-phpunit": "^0.18.0",
+                "vimeo/psalm": "^5.0.0"
+            },
+            "type": "library",
+            "extra": {
+                "laminas": {
+                    "component": "Laminas\\Mvc\\Plugin\\FlashMessenger"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Laminas\\Mvc\\Plugin\\FlashMessenger\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "Plugin for creating and exposing flash messages via laminas-mvc controllers",
+            "homepage": "https://laminas.dev",
+            "keywords": [
+                "laminas",
+                "mvc"
+            ],
+            "support": {
+                "chat": "https://laminas.dev/chat",
+                "docs": "https://docs.laminas.dev/laminas-mvc-plugin-flashmessenger/",
+                "forum": "https://discourse.laminas.dev",
+                "issues": "https://github.com/laminas/laminas-mvc-plugin-flashmessenger/issues",
+                "rss": "https://github.com/laminas/laminas-mvc-plugin-flashmessenger/releases.atom",
+                "source": "https://github.com/laminas/laminas-mvc-plugin-flashmessenger"
+            },
+            "funding": [
+                {
+                    "url": "https://funding.communitybridge.org/projects/laminas-project",
+                    "type": "community_bridge"
+                }
+            ],
+            "time": "2024-01-18T15:07:28+00:00"
+        },
+        {
+            "name": "laminas/laminas-mvc-plugin-prg",
+            "version": "1.8.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laminas/laminas-mvc-plugin-prg.git",
+                "reference": "b51e7ba892e52c6a80ce8c7dc7f8c429e3937516"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laminas/laminas-mvc-plugin-prg/zipball/b51e7ba892e52c6a80ce8c7dc7f8c429e3937516",
+                "reference": "b51e7ba892e52c6a80ce8c7dc7f8c429e3937516",
+                "shasum": ""
+            },
+            "require": {
+                "laminas/laminas-mvc": "^3.3.3",
+                "laminas/laminas-session": "^2.12.1",
+                "laminas/laminas-stdlib": "^3.10.1",
+                "php": "~8.1.0 || ~8.2.0 || ~8.3.0"
+            },
+            "conflict": {
+                "zendframework/zend-mvc-plugin-prg": "*"
+            },
+            "require-dev": {
+                "laminas/laminas-coding-standard": "~2.5.0",
+                "phpunit/phpunit": "^10.4",
+                "psalm/plugin-phpunit": "^0.18.0",
+                "vimeo/psalm": "^5.16"
+            },
+            "type": "library",
+            "extra": {
+                "laminas": {
+                    "component": "Laminas\\Mvc\\Plugin\\Prg"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Laminas\\Mvc\\Plugin\\Prg\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "Post/Redirect/Get plugin for laminas-mvc controllers",
+            "homepage": "https://laminas.dev",
+            "keywords": [
+                "laminas",
+                "mvc"
+            ],
+            "support": {
+                "chat": "https://laminas.dev/chat",
+                "docs": "https://docs.laminas.dev/laminas-mvc-plugin-prg/",
+                "forum": "https://discourse.laminas.dev",
+                "issues": "https://github.com/laminas/laminas-mvc-plugin-prg/issues",
+                "rss": "https://github.com/laminas/laminas-mvc-plugin-prg/releases.atom",
+                "source": "https://github.com/laminas/laminas-mvc-plugin-prg"
+            },
+            "funding": [
+                {
+                    "url": "https://funding.communitybridge.org/projects/laminas-project",
+                    "type": "community_bridge"
+                }
+            ],
+            "time": "2023-12-01T06:06:12+00:00"
         },
         {
             "name": "laminas/laminas-navigation",
@@ -1639,6 +1981,88 @@
                 }
             ],
             "time": "2023-10-24T11:19:47+00:00"
+        },
+        {
+            "name": "laminas/laminas-session",
+            "version": "2.20.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laminas/laminas-session.git",
+                "reference": "16876aa20a6688d06291a972f7e1eb0b74b05d51"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laminas/laminas-session/zipball/16876aa20a6688d06291a972f7e1eb0b74b05d51",
+                "reference": "16876aa20a6688d06291a972f7e1eb0b74b05d51",
+                "shasum": ""
+            },
+            "require": {
+                "laminas/laminas-eventmanager": "^3.12",
+                "laminas/laminas-servicemanager": "^3.22",
+                "laminas/laminas-stdlib": "^3.18",
+                "php": "~8.1.0 || ~8.2.0 || ~8.3.0"
+            },
+            "conflict": {
+                "zendframework/zend-session": "*"
+            },
+            "require-dev": {
+                "ext-xdebug": "*",
+                "laminas/laminas-cache": "^3.12.1",
+                "laminas/laminas-cache-storage-adapter-memory": "^2.3",
+                "laminas/laminas-coding-standard": "~2.5.0",
+                "laminas/laminas-db": "^2.19.0",
+                "laminas/laminas-http": "^2.19",
+                "laminas/laminas-validator": "^2.49.0",
+                "mongodb/mongodb": "~1.17.0",
+                "phpunit/phpunit": "^9.6.17",
+                "psalm/plugin-phpunit": "^0.18.4",
+                "vimeo/psalm": "^5.22.2"
+            },
+            "suggest": {
+                "laminas/laminas-cache": "Laminas\\Cache component",
+                "laminas/laminas-db": "Laminas\\Db component",
+                "laminas/laminas-http": "Laminas\\Http component",
+                "laminas/laminas-servicemanager": "Laminas\\ServiceManager component",
+                "laminas/laminas-validator": "Laminas\\Validator component",
+                "mongodb/mongodb": "If you want to use the MongoDB session save handler"
+            },
+            "type": "library",
+            "extra": {
+                "laminas": {
+                    "component": "Laminas\\Session",
+                    "config-provider": "Laminas\\Session\\ConfigProvider"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Laminas\\Session\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "Object-oriented interface to PHP sessions and storage",
+            "homepage": "https://laminas.dev",
+            "keywords": [
+                "laminas",
+                "session"
+            ],
+            "support": {
+                "chat": "https://laminas.dev/chat",
+                "docs": "https://docs.laminas.dev/laminas-session/",
+                "forum": "https://discourse.laminas.dev",
+                "issues": "https://github.com/laminas/laminas-session/issues",
+                "rss": "https://github.com/laminas/laminas-session/releases.atom",
+                "source": "https://github.com/laminas/laminas-session"
+            },
+            "funding": [
+                {
+                    "url": "https://funding.communitybridge.org/projects/laminas-project",
+                    "type": "community_bridge"
+                }
+            ],
+            "time": "2024-03-08T11:02:36+00:00"
         },
         {
             "name": "laminas/laminas-skeleton-installer",
@@ -2005,6 +2429,93 @@
                 }
             ],
             "time": "2024-01-25T11:26:39+00:00"
+        },
+        {
+            "name": "lm-commons/lmc-user",
+            "version": "v3.6.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/LM-Commons/LmcUser.git",
+                "reference": "69b4e986597d6b626b2a21d0e908c2385247684b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/LM-Commons/LmcUser/zipball/69b4e986597d6b626b2a21d0e908c2385247684b",
+                "reference": "69b4e986597d6b626b2a21d0e908c2385247684b",
+                "shasum": ""
+            },
+            "require": {
+                "laminas/laminas-authentication": "^2.7",
+                "laminas/laminas-crypt": "^3.0",
+                "laminas/laminas-db": "^2.11",
+                "laminas/laminas-form": "^3.0",
+                "laminas/laminas-http": "^2.11",
+                "laminas/laminas-hydrator": "^4.1",
+                "laminas/laminas-i18n": "^2.10",
+                "laminas/laminas-inputfilter": "^2.10",
+                "laminas/laminas-loader": "^2.6",
+                "laminas/laminas-modulemanager": "^2.8",
+                "laminas/laminas-mvc": "^3.0",
+                "laminas/laminas-mvc-plugin-flashmessenger": "^1.2",
+                "laminas/laminas-mvc-plugin-prg": "^1.2",
+                "laminas/laminas-servicemanager": "^3.0",
+                "laminas/laminas-session": "^2.9",
+                "laminas/laminas-stdlib": "^3.0",
+                "laminas/laminas-validator": "^2.13",
+                "laminas/laminas-view": "^2.11",
+                "php": "^7.3 || ^8.0"
+            },
+            "require-dev": {
+                "laminas/laminas-captcha": "^2.6",
+                "phpmd/phpmd": "^2.7.0",
+                "phpunit/phpunit": "^9.5.4",
+                "squizlabs/php_codesniffer": "^3.5.5"
+            },
+            "suggest": {
+                "laminas/laminas-captcha": "Laminas\\Captcha if you want to use the captcha component"
+            },
+            "type": "library",
+            "extra": {
+                "laminas": {
+                    "module": "LmcUser"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "LmcUser\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Evan Coury",
+                    "email": "me@evancoury.com",
+                    "homepage": "http://blog.evan.pro/"
+                },
+                {
+                    "name": "Kyle Spraggs",
+                    "email": "theman@spiffyjr.me",
+                    "homepage": "http://www.spiffyjr.me/"
+                },
+                {
+                    "name": "Mat Wright",
+                    "email": "mail@matwright.dev",
+                    "homepage": "https://matwright.dev/"
+                }
+            ],
+            "description": "A generic user registration and authentication module for Laminas. Supports Laminas\\Db and Doctrine2.",
+            "homepage": "https://github.com/LM-Commons/LmcUser",
+            "keywords": [
+                "laminas"
+            ],
+            "support": {
+                "issues": "https://github.com/LM-Commons/LmcUser/issues",
+                "source": "https://github.com/LM-Commons/LmcUser/tree/v3.6.1"
+            },
+            "time": "2024-03-14T14:23:17+00:00"
         },
         {
             "name": "nikic/php-parser",

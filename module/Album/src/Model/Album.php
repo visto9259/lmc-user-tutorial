@@ -16,6 +16,7 @@ class Album
     public $id;
     public $artist;
     public $title;
+    public $user_email;
 
     // Add this property:
     private $inputFilter;
@@ -25,6 +26,7 @@ class Album
         $this->id     = ! empty($array['id']) ? $array['id'] : null;
         $this->artist = ! empty($array['artist']) ? $array['artist'] : null;
         $this->title  = ! empty($array['title']) ? $array['title'] : null;
+        $this->user_email = !empty($array['user_email']) ? $array['user_email'] : null;
     }
 
     /* Add the following methods: */
@@ -102,6 +104,7 @@ class Album
             'id'     => $this->id,
             'artist' => $this->artist,
             'title'  => $this->title,
+            'user_email' => $this->user_email,
         ];
     }
 }
