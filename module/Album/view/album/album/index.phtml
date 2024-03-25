@@ -9,6 +9,9 @@ $userIdentity = $this->lmcUserIdentity();
 $mailTo = 'mailto:' . $userIdentity->getEmail();
 ?>
 <h1><a href="<?= $mailTo;?>"><?= $displayName?></a>&apos;s albums</h1>
+<?php if ($this->lmcUserIdentity()->getTagline()): ?>
+<p><?= $this->lmcUserIdentity()->getTagline();?></p>
+<?php endif;?>
 <p>
     <a href="<?= $this->url('album', ['action' => 'add']) ?>">Add new album</a>
 </p>

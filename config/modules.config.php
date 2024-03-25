@@ -21,4 +21,5 @@ return [
     'LmcUser',
     'Application',
     'Album',
+    'User',
 ];

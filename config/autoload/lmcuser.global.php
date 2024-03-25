@@ -23,7 +23,7 @@ $settings = [
      * instead of the default one provided. Default is LmcUser\Entity\User.
      * The entity class should implement LmcUser\Entity\UserInterface
      */
-    //'user_entity_class' => \LmcUser\Entity\User::class,
+    'user_entity_class' => \User\Entity\User::class,
 
     /**
      * Enable registration

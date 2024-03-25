@@ -1,0 +1,10 @@
+<div class="row">
+    <div class="col-1 m-1">
+        <div><?php echo $this->gravatar($this->lmcUserIdentity()->getEmail()) ?></div>
+    </div>
+    <div class="col m-1">
+        <h3><?php echo $this->translate('Hello'); ?>, <?php echo $this->escapeHtml($this->lmcUserDisplayName()) ?>!</h3>
+        <p><?= $this->lmcUserIdentity()->getTagline();?></p>
+        <a class="btn btn-primary" href="<?php echo $this->url('lmcuser/logout') ?>"><?php echo $this->translate('Sign Out'); ?></a>
+    </div>
+</div>
