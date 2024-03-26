@@ -6,6 +6,8 @@ class User extends \LmcUser\Entity\User
 {
     protected ?string $tagline = null;
 
+    protected array $roles = [];
+
     public function getTagline(): ?string
     {
         return $this->tagline;
@@ -14,6 +16,17 @@ class User extends \LmcUser\Entity\User
     public function setTagline(?string $tagline): User
     {
         $this->tagline = $tagline;
+        return $this;
+    }
+
+    public function getRoles(): array
+    {
+        return $this->roles;
+    }
+
+    public function setRoles(array $roles): User
+    {
+        $this->roles = $roles;
         return $this;
     }
 }
