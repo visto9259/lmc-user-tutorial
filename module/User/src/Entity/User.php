@@ -8,6 +8,19 @@ class User extends \LmcUser\Entity\User
 
     protected array $roles = [];
 
+    protected ?string $fullName;
+
+    public function getFullName(): ?string
+    {
+        return $this->fullName;
+    }
+
+    public function setFullName(?string $fullName): User
+    {
+        $this->fullName = $fullName;
+        return $this;
+    }
+
     public function getTagline(): ?string
     {
         return $this->tagline;

@@ -12,6 +12,8 @@ return [
         ],
         'factories' => [
             'custom_user_hydrator' => \User\Mapper\BaseUserHydratorFactory::class,
+            'lmcuser_user_hydrator' => \User\Mapper\UserHydratorFactory::class,
+            'lmcuser_user_mapper' => \User\Mapper\UserMapperFactory::class,
         ],
     ],
     'view_manager' => [

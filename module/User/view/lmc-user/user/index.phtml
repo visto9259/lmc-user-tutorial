@@ -4,7 +4,19 @@
     </div>
     <div class="col m-1">
         <h3><?php echo $this->translate('Hello'); ?>, <?php echo $this->escapeHtml($this->lmcUserDisplayName()) ?>!</h3>
+        <p>Full name: <?=$this->lmcUserIdentity()->getFullName();?></p>
         <p><?= $this->lmcUserIdentity()->getTagline();?></p>
+        <p>My roles:</p>
+        <?php $roles = $this->lmcUserIdentity()->getRoles();?>
+        <?php if (!empty($roles)): ?>
+        <ul class="list-group">
+            <?php foreach ($roles as $role): ?>
+            <li class="list-group-item"><?= $role?></li>
+            <?php endforeach;?>
+        </ul>
+        <?php else: ?>
+        <p>No roles</p>
+        <?php endif; ?>
         <a class="btn btn-primary" href="<?php echo $this->url('lmcuser/logout') ?>"><?php echo $this->translate('Sign Out'); ?></a>
     </div>
 </div>
